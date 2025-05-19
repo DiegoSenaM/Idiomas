@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="esc">
+                <img src="OIP.jpg" alt="Logo" class="esc-image">
+            </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="inc">
+                    <div class="inc-1"> 
+                        <h4 id="inc-1">INÍCIO</h4>
+                    </div>
+                </a>
+                <a href="cursos.html" class="cur">
+                    <div class="cur-1">
+                        <h4 id="cur-1">CURSOS</h4>
+                    </div>
+                </a>
+                <a href="inscricao.html" class="ins">
+                    <div class="ins-1"> 
+                        <h4 id="ins-1">INSCRIÇÃO</h4>
+                    </div>
+                </a>
+                <a href="contato.html" class="cont">
+                    <div class="cont-1">
+                        <h4 id="cont-1">CONTATO</h4>
+                    </div>
+                </a>
+                <a href="entrar.html" class="ent">
+                    <div class="ent-1">
+                        <h4 id="ent-1">ENTRAR</h4>
+                    </div> 
+                </a>
+                <a href="index.html" class="sair">
+                    <div class="sair-1">
+                        <h4 id="sair-1">SAIR</h4>
+                    </div> 
+                </a>
+            </nav>
+        </div> 
+    </header>
+
+    <main>
+        <div class="container-cont">
+            <div class="contato">
+                <h2 id="contato">Entre em Contato Conosco</h2>
+            </div>
+
+            <form>
+                <label for="nome-2"><h3 id="nome-3">Nome:</h3></label>
+                <input type="text" id="nome-2" name="nome-2" required>
+                
+                <label for="email-3"><h3 id="email-4">E-mail:</h3></label>
+                <input type="email" id="email-3" name="email-3" required>
+                
+                <label for="telefone"><h3 id="tel-1">Telefone:</h3></label>
+                <input type="tel" id="telefone" name="telefone" required>
+                
+                <label for="mensagem"><h3 id="conte-nos">Nos conte um pouco sobre sua dúvida:</h3></label>
+                <button type="button" onclick="enviarMensagem(event)"><h3 id="logo">Enviar Mensagem</h3></button>
+                <textarea id="mensagem" rows="5" cols="40" placeholder="Digite sua mensagem"></textarea>
+            </form>
+            <div id="balão-sucesso" class="balão-sucesso">
+                <p>Mensagem enviada com sucesso!</p>
+            </div>
+            <div id="balão-erro" class="balão-erro">
+                <p>Por favor, preencha todos os campos obrigatórios.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function enviarMensagem(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome-2');
+            const email = document.getElementById('email-3');
+            const telefone = document.getElementById('telefone');
+            const mensagem = document.getElementById('mensagem');
+            const balãoSucesso = document.getElementById('balão-sucesso');
+            const balãoErro = document.getElementById('balão-erro');
+            
+            if (nome.value === '' || email.value === '' || telefone.value === '' || mensagem.value === '') {
+                balãoErro.classList.add('show');
+                balãoSucesso.classList.remove('show');
+
+                setTimeout(() => {
+                    balãoErro.classList.remove('show');
+                }, 3000);
+                return;
+            }
+            balãoSucesso.classList.add('show');
+            nome.value = '';
+            email.value = '';
+            telefone.value = '';
+            mensagem.value = '';
+            setTimeout(() => {
+                balãoSucesso.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+<footer>
+    <div class="footer-6">
+
+    </div>
+</footer>
+</body>
+</html>

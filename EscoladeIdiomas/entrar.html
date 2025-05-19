@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <title>Login</title>
+   
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="esc">
+                    <img src="OIP.jpg" alt="Logo" class="esc-image">
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="inc">
+                    <div class="inc-1"> 
+                        <h4 id="inc-1">INÍCIO</h4>
+                    </div>
+                </a>
+                <a href="cursos.html" class="cur">
+                    <div class="cur-1">
+                        <h4 id="cur-1">CURSOS</h4>
+                    </div>
+                </a>
+                <a href="inscricao.html" class="ins">
+                    <div class="ins-1"> 
+                        <h4 id="ins-1">INSCRIÇÃO</h4>
+                    </div>
+                </a>
+                <a href="contato.html" class="cont">
+                    <div class="cont-1">
+                        <h4 id="cont-1">CONTATO</h4>
+                    </div>
+                </a>
+                <a href="entrar.html" class="ent">
+                    <div class="ent-1">
+                        <h4 id="ent-1">ENTRAR</h4>
+                    </div> 
+                </a>
+                <a href="index.html" class="sair">
+                    <div class="sair-1">
+                        <h4 id="sair-1">SAIR</h4>
+                    </div> 
+                </a>
+            </nav>
+        </div> 
+    </header>
+    <main>
+        <div class="conjunto">
+            <h2 id="conjunto-1">Já estuda com a gente?</h2>
+            <h4 id="conjunto-2">Faça seu Login e boa Aula!</h4>
+            <form action="/enviar e-mail" method="post">
+                <label for="email" id="email-1">E-mail</label>
+                <input type="email" id="email" name="email" required>
+                <label for="senha" id="senha-1">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+                <a href="aulas.html" id="entrar">Entrar</a>
+                <a href="#" id="esq">Esqueci minha senha</a>
+            </form>
+            <div id="g_id_onload"
+                 data-client_id="SEU_CLIENT_ID_AQUI"
+                 data-callback="handleCredentialResponse">
+            </div>
+        
+            <div class="g_id_signin" 
+                 data-type="standard" 
+                 data-shape="rectangular" 
+                 data-theme="outline" 
+                 data-text="login_with" 
+                 data-size="small">
+            </div>
+        
+            <script>
+                function handleCredentialResponse(response) {
+                    console.log("ID Token: " + response.credential);
+                }
+            </script>
+            
+        
+</div>  
+</main>
+
+</body>
+</html>
+
+        
+    
